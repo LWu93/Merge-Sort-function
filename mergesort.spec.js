@@ -32,6 +32,11 @@ describe('Merge Sort', function() {
     expect(JSON.stringify(mergeSort([1, 3, 5, 7, 2, 4, 6, 8]))).toBe(JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8]))
   });
 
+  it('Checks if MergeSort2 splits arrays properly', function () {
+    expect(JSON.stringify(mergeSort2([8,7,6,5,4,3,2,1]))).toBe(JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8]))
+    expect(JSON.stringify(mergeSort2([8,7,6,5,4,3,2]))).toBe(JSON.stringify([2, 3, 4, 5, 6, 7, 8]))
+
+  })
   //   it('Checks if it returns the SAME array with 1 element', function() {
   //   expect(JSON.stringify(mergeSort([2,3]))).toBe(JSON.stringify([2, 3]));
   // });

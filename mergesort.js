@@ -36,14 +36,16 @@ function merge(arr1, arr2) {
   return returnArr
 };
 
-function mergeSort(arr) {
+function mergeSort2(arr) {
   if (arr.length <= 1) {
     return arr
+  } else {
+    //[[1], [2], [3], [4]]
+    //MS2([1], [2]), MSR2([3], [4])
+    const arraySplit = split(arr);
+    return merge(mergeSort2(arraySplit[0]), mergeSort2(arraySplit[1]))
   }
 
-
-
-  return arr
 }
 
 function mergeSort(arr, left = 0, right = arr.length - 1) {
@@ -60,9 +62,8 @@ function mergeSort(arr, left = 0, right = arr.length - 1) {
   let leftPointer = left;
   let rightPointer = mid + 1;
   let pointer = left;
-  let cnt = 0;
   // console.log(arrayCopy, leftPointer, rightPointer, left, mid, mid+1, right)
-  while (cnt++ < 10000 && (leftPointer <= mid || rightPointer <= right)) {
+  while ((leftPointer <= mid || rightPointer <= right)) {
     if (
       leftPointer <= mid &&
       (arrayCopy[leftPointer] <= arrayCopy[rightPointer] ||
